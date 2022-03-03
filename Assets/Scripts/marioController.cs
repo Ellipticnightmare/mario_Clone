@@ -3,17 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class marioController : MonoBehaviour
 {
     public marioState MarioState = marioState.small;
     public UnityEvent onDeath, coinPickup, lifeUp;
-    public void RunDeath() => onDeath.Invoke();
-    public void RunCoin() => coinPickup.Invoke();
-    public void RunLifeShroom() => lifeUp.Invoke();
-    public void UpdateMarioAppearance()
+    public keyBindingData[] keyBinds;
+    public int baseSpeed;
+    public GameObject visualHolder;
+    float hInput, vInput;
+    float movSpeed;
+    bool isGrounded;
+    Rigidbody2D rigid;
+    KeyCode right, left, up, down, jump, bButton;
+    private void Start()
     {
+        rigid = GetComponent<Rigidbody2D>();
+    }
+    public void Update()
+    {
+        #region KeyBinding
+        right = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[0].keyName);
+        left = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[1].keyName);
+        up = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[2].keyName);
+        down = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[3].keyName);
+        jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[4].keyName);
+        bButton = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[5].keyName);
+        #endregion
 
+        float lNorm = (Input.GetKey(left)) ? 1 : 0;
+        float rNorm = (Input.GetKey(right)) ? 1 : 0;
+        float uNorm = (Input.GetKey(up)) ? 1 : 0;
+        float dNorm = (Input.GetKey(down)) ? 1 : 0;
+
+        hInput = rNorm - lNorm;
+        vInput = uNorm - dNorm;
+
+        movSpeed = Input.GetKey(bButton) ? baseSpeed * 1.5f : baseSpeed;
+
+        rigid.velocity = new Vector2(hInput * movSpeed, rigid.velocity.y);
+
+        if (hInput != 0)
+            visualHolder.transform.localScale = new Vector3(, 1, 1);
     }
     public void FixedUpdate()
     {
@@ -26,11 +57,23 @@ public class marioController : MonoBehaviour
                 upHit.collider.gameObject.GetComponent<BlockController>().RunHit();
         }
         RaycastHit downHit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downHit, 1.1f, layerMask))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downHit, 1.1f, layerMask))
         {
+            isGrounded = true;
             if (downHit.collider.tag == "enemy")
                 downHit.collider.gameObject.GetComponent<EnemyController>().RunHit();
         }
+        else
+            isGrounded = false;
+
+        if(isGrounded && Input.GetKey(jump))
+        {
+            rigid.AddForce(Vector2.up * movSpeed * 10);
+        }
+    }
+    public void UpdateMarioAppearance()
+    {
+
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -82,6 +125,9 @@ public class marioController : MonoBehaviour
                 break;
         }
     }
+    public void RunDeath() => onDeath.Invoke();
+    public void RunCoin() => coinPickup.Invoke();
+    public void RunLifeShroom() => lifeUp.Invoke();
     public enum marioState
     {
         small,
@@ -89,4 +135,9 @@ public class marioController : MonoBehaviour
         star,
         flower
     };
+}
+[System.Serializable]
+public struct keyBindingData
+{
+    public string commandName, keyName;
 }
