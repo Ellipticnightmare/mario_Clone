@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class marioController : MonoBehaviour
 {
     public marioState MarioState = marioState.small;
@@ -11,6 +13,7 @@ public class marioController : MonoBehaviour
     public keyBindingData[] keyBinds;
     public int baseSpeed;
     public GameObject visualHolder;
+    public BoxCollider2D standCol, crouchCol;
     float hInput, vInput;
     float movSpeed;
     bool isGrounded;
@@ -35,23 +38,29 @@ public class marioController : MonoBehaviour
         float rNorm = (Input.GetKey(right)) ? 1 : 0;
         float uNorm = (Input.GetKey(up)) ? 1 : 0;
         float dNorm = (Input.GetKey(down)) ? 1 : 0;
+        float bButtonF = (Input.GetKey(bButton)) ? 1 : 0;
 
         hInput = rNorm - lNorm;
         vInput = uNorm - dNorm;
 
-        movSpeed = Input.GetKey(bButton) ? baseSpeed * 1.5f : baseSpeed;
+        if (Input.GetKey(down))
+            bButtonF = 0;
+        movSpeed = (bButtonF > 0) ? baseSpeed * 1.5f : Input.GetKey(down) ? baseSpeed * .75f : baseSpeed;
 
         rigid.velocity = new Vector2(hInput * movSpeed, rigid.velocity.y);
 
         if (hInput != 0)
-            visualHolder.transform.localScale = new Vector3(, 1, 1);
+            visualHolder.transform.localScale = new Vector3(hInput, 1, 1);
+
+        standCol.enabled = (Input.GetKey(down)) ? false : true;
+        crouchCol.enabled = (Input.GetKey(down)) ? true : false;
     }
     public void FixedUpdate()
     {
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
         RaycastHit upHit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out upHit, 1.1f, layerMask))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out upHit, 1.1f, layerMask))
         {
             if (upHit.collider.tag == "block")
                 upHit.collider.gameObject.GetComponent<BlockController>().RunHit();
@@ -66,7 +75,7 @@ public class marioController : MonoBehaviour
         else
             isGrounded = false;
 
-        if(isGrounded && Input.GetKey(jump))
+        if (isGrounded && Input.GetKey(jump))
         {
             rigid.AddForce(Vector2.up * movSpeed * 10);
         }
