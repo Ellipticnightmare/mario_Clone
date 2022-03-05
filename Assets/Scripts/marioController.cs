@@ -13,7 +13,7 @@ public class marioController : MonoBehaviour
     public marioState MarioState = marioState.small; //manages health
     public UnityEvent onDeath, coinPickup, lifeUp; //runs events out to GameManager script, rather than needing references or Finds
     public keyBindingData[] keyBinds; //lets us set custom keybindings, or even rebindable keys down the line.  Easier than changing script or Input Manager
-    [Range(1,5)]; //Sets a range for the speed
+    [Range(1,5)] //Sets a range for the speed
     public int baseSpeed; //Mario's base movement speed
     public GameObject visualHolder; //Holds the sprites/animations, etc in a dedicated object for ease of manipulation
     public BoxCollider2D standCol, crouchCol; //References the two colliders
