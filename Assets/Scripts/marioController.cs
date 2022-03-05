@@ -12,8 +12,8 @@ public class marioController : MonoBehaviour
     #region Accessible
     public marioState MarioState = marioState.small; //manages health
     public UnityEvent onDeath, coinPickup, lifeUp; //runs events out to GameManager script, rather than needing references or Finds
-    public keyBindingData[] keyBinds; //lets us set custom keybindings, or even rebindable keys down the line.  Easier than changing script or Input Manager
-    [Range(1,5)]; //Sets a range for the speed
+    public keybinDatabase keyBinds; //lets us set custom keybindings, or even rebindable keys down the line.  Easier than changing script or Input Manager
+    [Range(1,5)] //Sets a range for the speed
     public int baseSpeed; //Mario's base movement speed
     public GameObject visualHolder; //Holds the sprites/animations, etc in a dedicated object for ease of manipulation
     public BoxCollider2D standCol, crouchCol; //References the two colliders
@@ -37,12 +37,12 @@ public class marioController : MonoBehaviour
     public void Update()
     {
         #region KeyBinding //Read keybinding data
-        right = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[0].keyName);
-        left = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[1].keyName);
-        up = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[2].keyName);
-        down = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[3].keyName);
-        jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[4].keyName);
-        bButton = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds[5].keyName);
+        right = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[0].keyName);
+        left = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[1].keyName);
+        up = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[2].keyName);
+        down = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[3].keyName);
+        jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[4].keyName);
+        bButton = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[5].keyName);
         #endregion
 
         float lNorm = (Input.GetKey(left)) ? 1 : 0; //Take in left input data
