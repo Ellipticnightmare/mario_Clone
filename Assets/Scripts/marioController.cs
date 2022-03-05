@@ -70,18 +70,19 @@ public class marioController : MonoBehaviour
     {
         int layerMask = 1 << 8; //Read layers up to player layer
         layerMask = ~layerMask; //Read all layers except for player layer
-        RaycastHit upHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out upHit, 1.1f, layerMask)) //Detect what Mario bonks his head into
+        RaycastHit2D hitUp = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.up), 1.1f, layerMask);
+        if (hitUp.collider) //Detect what Mario bonks his head into
         {
-            if (upHit.collider.tag == "block")
-                upHit.collider.gameObject.GetComponent<BlockController>().RunHit();
+            if (hitUp.collider.tag == "block")
+                hitUp.collider.gameObject.GetComponent<BlockController>().RunHit();
         }
-        RaycastHit downHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downHit, 1.1f, layerMask)) //Detect what Mario steps on, if stepping, make script know Mario is grounded
+
+        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.1f, layerMask);
+        if (hitDown.collider) //Detect what Mario steps on, if stepping, make script know Mario is grounded
         {
             isGrounded = true;
-            if (downHit.collider.tag == "enemy")
-                downHit.collider.gameObject.GetComponent<EnemyController>().RunHit();
+            if (hitDown.collider.tag == "enemy")
+                hitDown.collider.gameObject.GetComponent<EnemyController>().RunHit();
         }
         else
             isGrounded = false;

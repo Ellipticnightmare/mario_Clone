@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBinds:
   - commandName: right
-    keyName: d
+    keyName: D
   - commandName: left
-    keyName: a
+    keyName: A
   - commandName: up
-    keyName: w
+    keyName: W
   - commandName: down
-    keyName: s
+    keyName: S
   - commandName: jump
-    keyName: space
+    keyName: W
   - commandName: bButton
-    keyName: b
+    keyName: B
