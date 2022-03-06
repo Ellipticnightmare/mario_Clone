@@ -7462,7 +7462,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 45023115}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 86e00e6891b2db648b805b5ddad2f807, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7484,12 +7484,12 @@ PrefabInstance:
     - target: {fileID: 5586824077579941245, guid: d0330444c249fa440953cce6a15c715a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1874514
+      value: 25.71
       objectReference: {fileID: 0}
     - target: {fileID: 5586824077579941245, guid: d0330444c249fa440953cce6a15c715a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.512544
+      value: -2.83
       objectReference: {fileID: 0}
     - target: {fileID: 5586824077579941245, guid: d0330444c249fa440953cce6a15c715a,
         type: 3}
@@ -7548,12 +7548,12 @@ PrefabInstance:
     - target: {fileID: 3307992264911401536, guid: 28ac9515e39bda749ab32bb1f639493d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6023788
+      value: 16.19
       objectReference: {fileID: 0}
     - target: {fileID: 3307992264911401536, guid: 28ac9515e39bda749ab32bb1f639493d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.88
+      value: -2.74
       objectReference: {fileID: 0}
     - target: {fileID: 3307992264911401536, guid: 28ac9515e39bda749ab32bb1f639493d,
         type: 3}
@@ -7684,7 +7684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892543108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 19.09, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

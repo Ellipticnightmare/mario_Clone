@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 3307992264911401536}
   - component: {fileID: 3307992264911401539}
   - component: {fileID: 6430165770663228811}
-  - component: {fileID: 3307992264911401538}
+  - component: {fileID: 2462464383402849938}
   - component: {fileID: 3307992264911401537}
   m_Layer: 8
   m_Name: Mario
@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -123,8 +123,8 @@ CapsuleCollider2D:
   m_Offset: {x: 0.001382947, y: -0.023508549}
   m_Size: {x: 0.6355188, y: 1.2350836}
   m_Direction: 0
---- !u!61 &3307992264911401538
-BoxCollider2D:
+--- !u!58 &2462464383402849938
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,22 +133,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0013828278, y: -0.36152935}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: -0.3217749}
   serializedVersion: 2
-  m_Size: {x: 0.63769484, y: 0.5598774}
-  m_EdgeRadius: 0
+  m_Radius: 0.31790024
 --- !u!114 &3307992264911401537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,10 +162,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   keyBinds: {fileID: 11400000, guid: f5cdb9f5263b824418ab95201fe3dd6d, type: 2}
-  baseSpeed: 4
+  baseSpeed: 4.35
   visualHolder: {fileID: 3307992264025332490}
-  standCol: {fileID: 3307992264911401538}
-  crouchCol: {fileID: 3307992264911401538}
+  standCol: {fileID: 6430165770663228811}
+  crouchCol: {fileID: 2462464383402849938}
 --- !u!1 &3307992265299423941
 GameObject:
   m_ObjectHideFlags: 0

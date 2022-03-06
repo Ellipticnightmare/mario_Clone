@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))] //Controls movement
-[RequireComponent(typeof(BoxCollider2D))] //detects Crouching collisions
-[RequireComponent(typeof(BoxCollider2D))] //detects Standing collisions
+[RequireComponent(typeof(CapsuleCollider2D))] //detects Crouching collisions
+[RequireComponent(typeof(CircleCollider2D))] //detects Standing collisions
 public class marioController : MonoBehaviour
 {
     #region Variables
@@ -14,9 +14,10 @@ public class marioController : MonoBehaviour
     public UnityEvent onDeath, coinPickup, lifeUp; //runs events out to GameManager script, rather than needing references or Finds
     public keybinDatabase keyBinds; //lets us set custom keybindings, or even rebindable keys down the line.  Easier than changing script or Input Manager
     [Range(1,5)] //Sets a range for the speed
-    public int baseSpeed; //Mario's base movement speed
+    public float baseSpeed; //Mario's base movement speed
     public GameObject visualHolder; //Holds the sprites/animations, etc in a dedicated object for ease of manipulation
-    public BoxCollider2D standCol, crouchCol; //References the two colliders
+    public CapsuleCollider2D standCol;
+    public CircleCollider2D crouchCol;//References the two colliders
     #endregion
     #region Protected
     float hInput, vInput; //Creates axes based on vertical and horizontal movement
@@ -25,6 +26,8 @@ public class marioController : MonoBehaviour
     Rigidbody2D rigid; //Rigidbody reference
     KeyCode right, left, up, down, jump, bButton; //Stores keycodes so they can be accessed by other areas of the script
     marioState heldState = marioState.small; //holds the previous state for coming out of star
+    private int layerMask;
+    private bool jumped; //sets if tryig to jump in update to be used in fixedupdate
     #endregion
     #endregion
 
@@ -33,6 +36,8 @@ public class marioController : MonoBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>(); //Assign Rigidbody automatically
+        layerMask = 1 << 8; //Read layers up to player layer
+        layerMask = ~layerMask; //Read all layers except for player layer
     }
     public void Update()
     {
@@ -65,11 +70,13 @@ public class marioController : MonoBehaviour
 
         standCol.enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
         crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
+        if (Input.GetKeyDown(jump))
+        {
+            jumped = true;
+        }
     }
     public void FixedUpdate()
     {
-        int layerMask = 1 << 8; //Read layers up to player layer
-        layerMask = ~layerMask; //Read all layers except for player layer
         RaycastHit2D hitUp = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.up), 1.1f, layerMask);
         if (hitUp.collider) //Detect what Mario bonks his head into
         {
@@ -87,9 +94,16 @@ public class marioController : MonoBehaviour
         else
             isGrounded = false;
 
-        if (isGrounded && Input.GetKey(jump)) //Allow for jumping if Mario is grounded
+        if (jumped) //Checks if jump key was pressed in update
         {
-            rigid.AddForce(Vector2.up * movSpeed * 10);
+            jumped = false;
+            RaycastHit2D jumpHitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.1f, layerMask);
+            if (jumpHitDown.collider) //Detect what Mario steps on, if stepping, make script know Mario is grounded
+            {
+                rigid.AddForce(Vector2.up * movSpeed * 90.0f);
+                StartCoroutine(JumpHigher());
+            }
+
         }
     }
     #endregion
@@ -149,6 +163,26 @@ public class marioController : MonoBehaviour
     public void UpdateMarioAppearance()
     {
         //Logic to change Mario's appearance will go here
+    }
+
+    IEnumerator JumpHigher()
+    {
+        bool stillHolding = true;
+        float startTime = Time.time;
+        while (Time.time < startTime + 0.3f && stillHolding)
+        {
+            if (Input.GetKey(jump))
+            {
+                rigid.AddForce(Vector2.up * movSpeed * 250.0f * Time.deltaTime);
+                Debug.Log("holding");
+            }
+            else
+            {
+                stillHolding = false;
+                Debug.Log("stopped holding");
+            }
+            yield return null;
+        }
     }
     public void RunDeath() => onDeath.Invoke(); //Call to GameManager, tell them we died
     public void RunCoin() => coinPickup.Invoke(); //Call to GameManager, tell them we picked up a coin
