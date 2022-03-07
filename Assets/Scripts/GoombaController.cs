@@ -12,6 +12,6 @@ public class GoombaController : EnemyController
     public void RunDeath()
     {
         Destroy(this.gameObject);
-        GameManager.GainPoints(100);
+        GameManager.GainPoints(score);
     }
 }

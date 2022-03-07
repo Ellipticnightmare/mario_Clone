@@ -7,12 +7,11 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float flipDistance = .032f;
     int dir;
-    int layerMask;
+    public int score;
+    public LayerMask layerMask;
     private void Start()
     {
         dir = -1;
-        layerMask = 1 << 9;
-        layerMask = ~layerMask;
     }
     private void Update()
     {

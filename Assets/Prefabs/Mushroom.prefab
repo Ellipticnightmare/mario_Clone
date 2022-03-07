@@ -168,6 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   flipDistance: 0.032
+  score: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1792
   colBridge: {fileID: 5101097750204796891}
   needsTag: 1
   neededTag: Player

@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5e51cbaad7e0142b003f9b1279be0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlockType: 1
   spawnObj: {fileID: 0}
   DeadBlock: {fileID: 5261936307391501541, guid: 31074cbfbf63a0343b1a5e64158a7f6c,
     type: 3}
