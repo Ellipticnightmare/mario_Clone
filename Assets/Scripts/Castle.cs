@@ -9,7 +9,7 @@ public class Castle : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("NextLevel");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
