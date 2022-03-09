@@ -46,11 +46,11 @@ public class GameManager : MonoBehaviour
         {
             score = points;
             timer -= Time.deltaTime * timeScaleReal;
-            timeDisplay.text = ((int)timer).ToString();
-            scoreDisplay.text = points.ToString();
+            timeDisplay.text = "TIMER \n" + ((int)timer).ToString();
+            scoreDisplay.text = "SCORE \n" + points.ToString();
         }
         else
-            lifeDisplay.text = " X   " + lives;
+            lifeDisplay.text = "LIVES \n" + + lives;
     }
     public static void GainPoints(int pointGain)
     {
