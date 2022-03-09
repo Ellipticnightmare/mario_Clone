@@ -13,7 +13,7 @@ public class marioController : MonoBehaviour
     public marioState MarioState = marioState.small; //manages health
     public UnityEvent onDeath, coinPickup, lifeUp; //runs events out to GameManager script, rather than needing references or Finds
     public keybinDatabase keyBinds; //lets us set custom keybindings, or even rebindable keys down the line.  Easier than changing script or Input Manager
-    [Range(1,5)] //Sets a range for the speed
+    [Range(1, 5)] //Sets a range for the speed
     public float baseSpeed; //Mario's base movement speed
     public GameObject visualHolder; //Holds the sprites/animations, etc in a dedicated object for ease of manipulation
     public CapsuleCollider2D standCol;
@@ -69,7 +69,10 @@ public class marioController : MonoBehaviour
             rigid.velocity = new Vector2(hInput * movSpeed, rigid.velocity.y); //Set velocity for movement
 
             if (hInput != 0)
+            {
                 visualHolder.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
+                //Change animation bool to run
+            }
 
             standCol.enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
             crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
@@ -183,10 +186,10 @@ public class marioController : MonoBehaviour
             case "lifeUp": //Gain extra life
                 RunLifeShroom();
                 Destroy(collision.gameObject);
-                break;        
+                break;
         }
     }
-        
+
     #region Custom
     public void UpdateMarioAppearance()
     {
