@@ -40,6 +40,7 @@ public class marioController : MonoBehaviour
         layerMask = 1 << 8; //Read layers up to player layer
         layerMask = ~layerMask; //Read all layers except for player layer
         isFinish = false;
+        UpdateMarioAppearance();
     }
     public void Update()
     {
@@ -62,15 +63,19 @@ public class marioController : MonoBehaviour
             hInput = rNorm - lNorm; //Build horizontal axis
             vInput = uNorm - dNorm; //Build vertical axis
 
-            if (Input.GetKey(down)) //If crouching, prevent running, firing fireballs, etc
+            if (Input.GetKey(down))
+            { //If crouching, prevent running, firing fireballs, etc
+                gameObject.GetComponent<Animator>().SetTrigger("crouch");
+
                 bButtonF = 0;
+            }
             movSpeed = (bButtonF > 0) ? baseSpeed * 1.5f : Input.GetKey(down) ? baseSpeed * .75f : baseSpeed; //Adjust speed based on running, crouching, etc
 
             rigid.velocity = new Vector2(hInput * movSpeed, rigid.velocity.y); //Set velocity for movement
 
             if (hInput != 0)
             {
-                visualHolder.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
+                gameObject.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
                 //Change animation bool to run
                 gameObject.GetComponent<Animator>().SetBool("isMoving", true);
             }else
@@ -201,9 +206,9 @@ public class marioController : MonoBehaviour
     public void UpdateMarioAppearance()
     {
         //Logic to change Mario's appearance will go here
-        if (MarioState == marioState.small) { gameObject.GetComponent<Animator>().SetTrigger("littleMario"); }
-        if (MarioState == marioState.big) { gameObject.GetComponent<Animator>().SetTrigger("normMario"); }
-        if (MarioState == marioState.flower) { gameObject.GetComponent<Animator>().SetTrigger("fireMario"); }
+        if (MarioState == marioState.small) { gameObject.GetComponent<Animator>().SetTrigger("littleMario"); }else if
+         (MarioState == marioState.big) { gameObject.GetComponent<Animator>().SetTrigger("normMario"); }else if
+         (MarioState == marioState.flower) { gameObject.GetComponent<Animator>().SetTrigger("fireMario"); }
 
     }
 
