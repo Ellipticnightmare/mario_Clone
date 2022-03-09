@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public int timeScale = 4;
     [Header("How long the lives display is up before the game starts")]
     [Range(1, 10)]
-    public int startDelay = 6;
+    public int startDelay = 3;
     #endregion
     #region protected
     static int points;
