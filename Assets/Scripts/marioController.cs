@@ -123,6 +123,7 @@ public class marioController : MonoBehaviour
             RaycastHit2D jumpHitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.1f, layerMask);
             if (jumpHitDown.collider) //Detect what Mario steps on, if stepping, make script know Mario is grounded
             {
+                GetComponent<AudioSource>().Play();
                 rigid.AddForce(Vector2.up * movSpeed * 90.0f);
                 StartCoroutine(JumpHigher());
             }
