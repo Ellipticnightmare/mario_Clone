@@ -70,7 +70,7 @@ public class marioController : MonoBehaviour
 
             if (hInput != 0)
             {
-                visualHolder.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
+                gameObject.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
                 //Change animation bool to run
                 gameObject.GetComponent<Animator>().SetBool("isMoving", true);
             }else
