@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.4
-  flipDistance: 0.32
+  flipDistance: 0.36
   score: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 257
