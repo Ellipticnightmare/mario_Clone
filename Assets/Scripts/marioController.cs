@@ -83,8 +83,12 @@ public class marioController : MonoBehaviour
                 gameObject.GetComponent<Animator>().SetBool("isMoving", false);
             }
 
-            standCol.enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
-            crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
+            if (MarioState == marioState.big)
+            {
+                enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
+            }
+
+            //crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
             if (Input.GetKeyDown(jump))
             {
               SoundManagerScript.PlaySound ("jump");
@@ -121,6 +125,7 @@ public class marioController : MonoBehaviour
             RaycastHit2D jumpHitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.1f, layerMask);
             if (jumpHitDown.collider) //Detect what Mario steps on, if stepping, make script know Mario is grounded
             {
+                GetComponent<AudioSource>().Play();
                 rigid.AddForce(Vector2.up * movSpeed * 90.0f);
                 StartCoroutine(JumpHigher());
             }
@@ -208,9 +213,24 @@ public class marioController : MonoBehaviour
     public void UpdateMarioAppearance()
     {
         //Logic to change Mario's appearance will go here
-        if (MarioState == marioState.small) { gameObject.GetComponent<Animator>().SetTrigger("littleMario"); }else if
-         (MarioState == marioState.big) { gameObject.GetComponent<Animator>().SetTrigger("normMario"); }else if
-         (MarioState == marioState.flower) { gameObject.GetComponent<Animator>().SetTrigger("fireMario"); }
+        if (MarioState == marioState.small)
+        {
+            crouchCol.enabled = true;
+            standCol.enabled = false;
+            gameObject.GetComponent<Animator>().SetTrigger("littleMario");
+        }else if
+            (MarioState == marioState.big)
+        {
+            crouchCol.enabled = true;
+            standCol.enabled = true;
+            gameObject.GetComponent<Animator>().SetTrigger("normMario");
+        }else if
+            (MarioState == marioState.flower)
+        {
+            crouchCol.enabled = true;
+            standCol.enabled = true;
+            gameObject.GetComponent<Animator>().SetTrigger("fireMario");
+        }
 
     }
 

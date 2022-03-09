@@ -12,6 +12,7 @@ TagManager:
   - coin
   - lifeUp
   - block
+  - shell
   layers:
   - Default
   - TransparentFX
