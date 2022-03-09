@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5101097750204796892}
   - component: {fileID: 5101097750204796891}
   - component: {fileID: 5101097750204796890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: magic_mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101097750204796894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28308803, y: 0.10430372, z: 0.6248014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5101097750874516033}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 5101097750874516032}
   - component: {fileID: -3106157118677592673}
   - component: {fileID: -1132069727062378286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mushroom
   m_TagString: mushroom
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101097750874516034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28308803, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.113226, y: 1.113226, z: 1.113226}
   m_Children:
   - {fileID: 5101097750204796893}
@@ -168,12 +168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924bc9087db3f3d4c8bbca795ec694b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  flipDistance: 0.032
-  score: 0
+  speed: 1.4
+  flipDistance: 0.35
+  score: 100
   layerMask:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 257
   colBridge: {fileID: 5101097750204796891}
   needsTag: 1
   neededTag: Player
@@ -223,8 +223,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 0.29929677, y: 0.07420808}
+      - {x: 0.20126452, y: 0.19021961}
+      - {x: 0.010146259, y: 0.31831026}
+      - {x: -0.20174876, y: 0.19755726}
+      - {x: -0.3252577, y: -0.045022834}
+      - {x: -0.112018555, y: -0.33426607}
+      - {x: 0.1312852, y: -0.33426672}
+      - {x: 0.32742444, y: 0.015531327}

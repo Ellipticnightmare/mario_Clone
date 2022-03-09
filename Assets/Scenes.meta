@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 148c498d2c3300c40ae450916fa2f34a
+=======
+guid: cdb6707991a550e4abf56fef68873e20
+>>>>>>> devBranch-Layout
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
