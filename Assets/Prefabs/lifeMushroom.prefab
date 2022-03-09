@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3487532381537584058}
   - component: {fileID: 3487532381537584036}
   - component: {fileID: 3487532381537584059}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1-up_mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3487532381537584056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28308803, y: 0.10430372, z: 0.6248014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3487532381577012570}
@@ -132,7 +132,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3487532381577012570}
   - component: {fileID: 3487532381577012571}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: -3211066141803992244}
+  - component: {fileID: 2053959739246574968}
+  m_Layer: 9
+>>>>>>> Stashed changes
   m_Name: lifeMushroom
   m_TagString: lifeUp
   m_Icon: {fileID: 0}
@@ -147,7 +153,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3487532381577012569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0.28308803, y: -0.10430372, z: -0.6248014}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1.113226, y: 1.113226, z: 1.113226}
   m_Children:
   - {fileID: 3487532381537584057}
@@ -166,8 +176,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924bc9087db3f3d4c8bbca795ec694b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   speed: 0
   flipDistance: 0.032
   colBridge: {fileID: 3487532381537584059}
   needsTag: 1
   neededTag: Player
+=======
+  speed: 1.4
+  flipDistance: 0.35
+  score: 100
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1792
+  colBridge: {fileID: 3487532381537584059}
+  needsTag: 1
+  neededTag: Player
+--- !u!50 &-3211066141803992244
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487532381577012569}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &2053959739246574968
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487532381577012569}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.20557714, y: 0.17068246}
+      - {x: 0.025519958, y: 0.3261628}
+      - {x: -0.19276586, y: 0.19528471}
+      - {x: -0.32772696, y: -0.063222066}
+      - {x: -0.09848275, y: -0.3156295}
+      - {x: 0.12444282, y: -0.31562993}
+      - {x: 0.3431708, y: -0.05494122}
+>>>>>>> Stashed changes
