@@ -79,6 +79,7 @@ public class marioController : MonoBehaviour
             if (Input.GetKeyDown(jump))
             {
                 jumped = true;
+                //Trigger jump animation
             }
         }
     }
@@ -97,6 +98,7 @@ public class marioController : MonoBehaviour
             isGrounded = true;
             if (hitDown.collider.tag == "enemy")
                 hitDown.collider.gameObject.GetComponent<EnemyController>().RunHit();
+            //Stop triggering jump animation
         }
         else
             isGrounded = false;
