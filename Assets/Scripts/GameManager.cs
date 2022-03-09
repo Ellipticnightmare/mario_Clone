@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime * timeScaleReal;
-        timeDisplay.text = "TIMER \n"+ ((int)timer).ToString();
-        scoreDisplay.text = points.ToString();
+        timeDisplay.text = "TIMER \n" + ((int)timer).ToString();
+        scoreDisplay.text = "SCORE \n" + points.ToString();
     }
     public static void GainPoints(int pointGain)
     {

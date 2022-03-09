@@ -28,6 +28,7 @@ public class marioController : MonoBehaviour
     marioState heldState = marioState.small; //holds the previous state for coming out of star
     private int layerMask;
     private bool jumped; //sets if tryig to jump in update to be used in fixedupdate
+    public bool isFinish = false;
     #endregion
     #endregion
 
@@ -38,6 +39,7 @@ public class marioController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>(); //Assign Rigidbody automatically
         layerMask = 1 << 8; //Read layers up to player layer
         layerMask = ~layerMask; //Read all layers except for player layer
+        isFinish = false;
     }
     public void Update()
     {
@@ -49,30 +51,32 @@ public class marioController : MonoBehaviour
         jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[4].keyName);
         bButton = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBinds.keyBinds[5].keyName);
         #endregion
-
-        float lNorm = (Input.GetKey(left)) ? 1 : 0; //Take in left input data
-        float rNorm = (Input.GetKey(right)) ? 1 : 0; //Take in right input data
-        float uNorm = (Input.GetKey(up)) ? 1 : 0; //Take in up input data
-        float dNorm = (Input.GetKey(down)) ? 1 : 0; //Take in down input data
-        float bButtonF = (Input.GetKey(bButton)) ? 1 : 0; //Take in Special input data
-
-        hInput = rNorm - lNorm; //Build horizontal axis
-        vInput = uNorm - dNorm; //Build vertical axis
-
-        if (Input.GetKey(down)) //If crouching, prevent running, firing fireballs, etc
-            bButtonF = 0;
-        movSpeed = (bButtonF > 0) ? baseSpeed * 1.5f : Input.GetKey(down) ? baseSpeed * .75f : baseSpeed; //Adjust speed based on running, crouching, etc
-
-        rigid.velocity = new Vector2(hInput * movSpeed, rigid.velocity.y); //Set velocity for movement
-
-        if (hInput != 0)
-            visualHolder.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
-
-        standCol.enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
-        crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
-        if (Input.GetKeyDown(jump))
+        if (isFinish == false)
         {
-            jumped = true;
+            float lNorm = (Input.GetKey(left)) ? 1 : 0; //Take in left input data
+            float rNorm = (Input.GetKey(right)) ? 1 : 0; //Take in right input data
+            float uNorm = (Input.GetKey(up)) ? 1 : 0; //Take in up input data
+            float dNorm = (Input.GetKey(down)) ? 1 : 0; //Take in down input data
+            float bButtonF = (Input.GetKey(bButton)) ? 1 : 0; //Take in Special input data
+
+            hInput = rNorm - lNorm; //Build horizontal axis
+            vInput = uNorm - dNorm; //Build vertical axis
+
+            if (Input.GetKey(down)) //If crouching, prevent running, firing fireballs, etc
+                bButtonF = 0;
+            movSpeed = (bButtonF > 0) ? baseSpeed * 1.5f : Input.GetKey(down) ? baseSpeed * .75f : baseSpeed; //Adjust speed based on running, crouching, etc
+
+            rigid.velocity = new Vector2(hInput * movSpeed, rigid.velocity.y); //Set velocity for movement
+
+            if (hInput != 0)
+                visualHolder.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
+
+            standCol.enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
+            crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
+            if (Input.GetKeyDown(jump))
+            {
+                jumped = true;
+            }
         }
     }
     public void FixedUpdate()
@@ -109,8 +113,13 @@ public class marioController : MonoBehaviour
     #endregion
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        switch (collision.tag.ToString())
+        if (collision.transform.tag == "Finish")
         {
+            collision.gameObject.GetComponent<Animator>().SetBool("Finish", true);
+            isFinish = true;
+        }
+        switch (collision.tag.ToString())
+        {            
             case "killzone": //Kill Mario upon falling through hole in ground
                 RunDeath();
                 break;
@@ -156,9 +165,10 @@ public class marioController : MonoBehaviour
             case "lifeUp": //Gain extra life
                 RunLifeShroom();
                 Destroy(collision.gameObject);
-                break;
+                break;        
         }
     }
+        
     #region Custom
     public void UpdateMarioAppearance()
     {
