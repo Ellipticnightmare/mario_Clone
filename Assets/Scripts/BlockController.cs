@@ -28,6 +28,7 @@ public class BlockController : MonoBehaviour
             case blockType.hasCoin:
                 spawnCount--;
                 FindObjectOfType<GameManager>().GainCoin();
+                GameObject newSpawn2 = Instantiate(spawnObj, new Vector3(this.transform.position.x, this.transform.position.y + spawnAboveDist, 0), Quaternion.identity);
                 if (spawnCount <= 0)
                 {
                     GameObject deadBlock = Instantiate(DeadBlock, transform.position, transform.rotation);
