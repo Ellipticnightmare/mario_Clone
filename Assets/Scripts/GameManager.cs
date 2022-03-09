@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime * timeScaleReal;
-        timeDisplay.text = ((int)timer).ToString();
+        timeDisplay.text = "TIMER \n"+ ((int)timer).ToString();
         scoreDisplay.text = points.ToString();
     }
     public static void GainPoints(int pointGain)
