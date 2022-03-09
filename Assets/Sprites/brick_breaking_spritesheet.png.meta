@@ -1,7 +1,136 @@
 fileFormatVersion: 2
 guid: 4590e5c66394b0d41b47aa97cbd43e90
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -795176074878199755
+    second: brick_breaking_spritesheet_0
+  - first:
+      213: -1757388725111532555
+    second: brick_breaking_spritesheet_1
+  - first:
+      213: 5697088390505445313
+    second: brick_breaking_spritesheet_2
+  - first:
+      213: 6370111696140723756
+    second: brick_breaking_spritesheet_3
+  - first:
+      213: 7757750610631737444
+    second: brick_breaking_spritesheet_4
+  - first:
+      213: 2437041101210056752
+    second: brick_breaking_spritesheet_5
+  - first:
+      213: 6975696710520485989
+    second: brick_breaking_spritesheet_6
+  - first:
+      213: 2821192699887138741
+    second: brick_breaking_spritesheet_7
+  - first:
+      213: 4745223689352594664
+    second: brick_breaking_spritesheet_8
+  - first:
+      213: -6159946572430912723
+    second: brick_breaking_spritesheet_9
+  - first:
+      213: 8803460148546560752
+    second: brick_breaking_spritesheet_10
+  - first:
+      213: -5091116401575498151
+    second: brick_breaking_spritesheet_11
+  - first:
+      213: -4760320496340081589
+    second: brick_breaking_spritesheet_12
+  - first:
+      213: 1155359162780642953
+    second: brick_breaking_spritesheet_13
+  - first:
+      213: -4098632126470423234
+    second: brick_breaking_spritesheet_14
+  - first:
+      213: 5405434179054199751
+    second: brick_breaking_spritesheet_15
+  - first:
+      213: -1822290293824530985
+    second: brick_breaking_spritesheet_16
+  - first:
+      213: -656340075926401205
+    second: brick_breaking_spritesheet_17
+  - first:
+      213: 4036047387243541526
+    second: brick_breaking_spritesheet_18
+  - first:
+      213: -879084946397569851
+    second: brick_breaking_spritesheet_19
+  - first:
+      213: -1336356391439616475
+    second: brick_breaking_spritesheet_20
+  - first:
+      213: 5032664220150151674
+    second: brick_breaking_spritesheet_21
+  - first:
+      213: 7198007605186779860
+    second: brick_breaking_spritesheet_0
+  - first:
+      213: 7746319572675373262
+    second: brick_breaking_spritesheet_1
+  - first:
+      213: 1459329078299780848
+    second: brick_breaking_spritesheet_2
+  - first:
+      213: 7182786008771560707
+    second: brick_breaking_spritesheet_3
+  - first:
+      213: -2373017304316187290
+    second: brick_breaking_spritesheet_4
+  - first:
+      213: 6229386274347791029
+    second: brick_breaking_spritesheet_5
+  - first:
+      213: -7904581772933312583
+    second: brick_breaking_spritesheet_6
+  - first:
+      213: 7892721155786418676
+    second: brick_breaking_spritesheet_7
+  - first:
+      213: -6557553524523313122
+    second: brick_breaking_spritesheet_8
+  - first:
+      213: -3907999491828124444
+    second: brick_breaking_spritesheet_9
+  - first:
+      213: 5553920616562408655
+    second: brick_breaking_spritesheet_10
+  - first:
+      213: 4295453790880884608
+    second: brick_breaking_spritesheet_11
+  - first:
+      213: 5921088624434410259
+    second: brick_breaking_spritesheet_12
+  - first:
+      213: 2457678274492907641
+    second: brick_breaking_spritesheet_13
+  - first:
+      213: -6823108677352854533
+    second: brick_breaking_spritesheet_14
+  - first:
+      213: 8556482078829154383
+    second: brick_breaking_spritesheet_15
+  - first:
+      213: -8840071340149666711
+    second: brick_breaking_spritesheet_16
+  - first:
+      213: 2190356207496547308
+    second: brick_breaking_spritesheet_17
+  - first:
+      213: -8333369343567809796
+    second: brick_breaking_spritesheet_18
+  - first:
+      213: 175504201980511874
+    second: brick_breaking_spritesheet_19
+  - first:
+      213: 4806902403390740988
+    second: brick_breaking_spritesheet_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +160,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +169,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +200,168 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 284
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dad7bdb7c574e360800000000000000
+      internalID: 7198007605186779860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 280
+        width: 75
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8a8fd0c94708b60800000000000000
+      internalID: 7746319572675373262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 274
+        width: 89
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3058976a1d16ea360800000000000000
+      internalID: 7182786008771560707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 144
+        width: 86
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e47d2bea2ff3c9c0800000000000000
+      internalID: -3907999491828124444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 320
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46046caf31119ab60800000000000000
+      internalID: 7757750610631737444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 144
+        width: 110
+        height: 98
+      alignment: 9
+      pivot: {x: 0.52741647, y: 0.5055185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7b2bf20d3e62720800000000000000
+      internalID: 2821192699887138741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick_breaking_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 285
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e441afddcb6ad140800000000000000
+      internalID: 4745223689352594664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
