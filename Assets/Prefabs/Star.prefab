@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6622099108367603271}
   - component: {fileID: 6622099108367603288}
   - component: {fileID: 6622099108367603289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: starman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6622099108367603269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28308803, y: 0.10430372, z: 0.6248014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6622099108732248006}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 177560922724167953}
   - component: {fileID: -5791854747915460968}
   - component: {fileID: -900235105715477070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Star
   m_TagString: star
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6622099108732248005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.32, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.113226, y: 1.113226, z: 1.113226}
   m_Children:
   - {fileID: 6622099108367603270}
@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924bc9087db3f3d4c8bbca795ec694b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  flipDistance: 0.032
-  score: 0
+  speed: 1.4
+  flipDistance: 0.35
+  score: 100
   layerMask:
     serializedVersion: 2
     m_Bits: 1792
@@ -294,8 +294,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 0.0017072487, y: 0.32900995}
+      - {x: -0.2834854, y: 0.1158766}
+      - {x: -0.23805556, y: -0.3200172}
+      - {x: 0.24150495, y: -0.3231732}
+      - {x: 0.28482634, y: 0.12098667}
