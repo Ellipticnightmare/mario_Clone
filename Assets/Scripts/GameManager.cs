@@ -77,8 +77,8 @@ public class GameManager : MonoBehaviour
     }
     public static void RunFinish()
     {
-        if (score > PlayerPrefs.GetInt("HighScore"))
-            PlayerPrefs.SetInt("HighScore", score);
+        if (points > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", points);
         SceneManager.LoadScene("MainMenu");
     }
     public void LifeUp()
