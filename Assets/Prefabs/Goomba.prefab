@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5586824077579941232}
   - component: {fileID: 5586824077579941244}
   - component: {fileID: 2044865827230547655}
+  - component: {fileID: 4816772398198580059}
   m_Layer: 9
   m_Name: Goomba
   m_TagString: enemy
@@ -166,3 +167,19 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 257
+--- !u!58 &4816772398198580059
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586824077579941233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.28410137}
+  serializedVersion: 2
+  m_Radius: 0.037279874

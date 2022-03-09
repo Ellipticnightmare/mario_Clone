@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5428169884033221447}
   - component: {fileID: 5428169884033221444}
   - component: {fileID: 403456021}
+  - component: {fileID: 7976858947670752163}
   m_Layer: 9
   m_Name: Koopa
   m_TagString: Untagged
@@ -182,3 +183,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &7976858947670752163
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428169884033221448}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.446822}
+  serializedVersion: 2
+  m_Radius: 0.014034003

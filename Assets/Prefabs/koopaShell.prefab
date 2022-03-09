@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5953152438129462795}
   - component: {fileID: 5953152438129462792}
   - component: {fileID: 5550849604029858243}
+  - component: {fileID: 8816838521528469046}
   m_Layer: 9
   m_Name: koopaShell
   m_TagString: Untagged
@@ -165,3 +166,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &8816838521528469046
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5953152438129462793}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.42146283}
+  serializedVersion: 2
+  m_Radius: 0.02671358
