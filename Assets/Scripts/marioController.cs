@@ -87,9 +87,11 @@ public class marioController : MonoBehaviour
             crouchCol.enabled = (Input.GetKey(down)) ? true : false; //If standing, turn off crouching collider
             if (Input.GetKeyDown(jump))
             {
+              SoundManagerScript.PlaySound ("jump");
                 jumped = true;
                 //Trigger jump animation
                 gameObject.GetComponent<Animator>().SetTrigger("jump");
+
             }
         }
     }
