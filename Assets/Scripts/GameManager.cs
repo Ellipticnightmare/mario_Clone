@@ -40,9 +40,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime * timeScaleReal;
-        timeDisplay.text = "TIMER \n" + ((int)timer).ToString();
-        scoreDisplay.text = "SCORE \n" + points.ToString();
+        timeDisplay.text = "TIMER \n" + ((int)timer);
+        scoreDisplay.text = "SCORE \n" + points;
         if (inGame)
         {
             score = points;

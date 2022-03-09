@@ -8050,6 +8050,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897394783}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LifeUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897394783}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerDied
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897394783}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GainCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 3307992264911401551, guid: 28ac9515e39bda749ab32bb1f639493d,
         type: 3}
       propertyPath: m_Name
@@ -8876,7 +8906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -100.6, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713210406
@@ -9047,7 +9077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 164.9, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808261490
@@ -11757,7 +11787,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 698514026}
   gameMusic: {fileID: 1116478334}
   timeScale: 4
-  startDelay: 6
+  startDelay: 4
 --- !u!4 &1909135129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 964287352132788675, guid: b25f96308e83a2944a9b5b54245f7a7e,
