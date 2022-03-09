@@ -75,6 +75,12 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
     }
+    public static void RunFinish()
+    {
+        if (score > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", score);
+        SceneManager.LoadScene("MainMenu");
+    }
     public void LifeUp()
     {
         lives++;

@@ -113,13 +113,13 @@ public class marioController : MonoBehaviour
     #endregion
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Finish")
-        {
-            collision.gameObject.GetComponent<Animator>().SetBool("Finish", true);
-            isFinish = true;
-        }
         switch (collision.tag.ToString())
-        {            
+        {
+            case "Finish":
+                collision.gameObject.GetComponent<Animator>().SetBool("Finish", true);
+                isFinish = true;
+                GameManager.RunFinish();
+                break;
             case "killzone": //Kill Mario upon falling through hole in ground
                 RunDeath();
                 break;
