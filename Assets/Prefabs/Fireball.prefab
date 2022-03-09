@@ -168,6 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   flipDistance: 0.032
+  score: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1792
   colBridge: {fileID: 7376802628385782594}
   needsTag: 1
   neededTag: enemy

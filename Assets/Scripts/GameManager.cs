@@ -2,38 +2,88 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     #region Variables
     #region accessible
-    public Text scoreDisplay, timeDisplay;
+    public Text scoreDisplay, timeDisplay, lifeDisplay;
+    public marioController Player;
+    public GameObject loadingScreen;
+    public AudioSource gameMusic;
     [Header("How many of this goes into a single second, 1 = 1 second")]
     [Range(1, 10)]
     public int timeScale = 4;
+    [Header("How long the lives display is up before the game starts")]
+    [Range(1, 10)]
+    public int startDelay = 6;
     #endregion
     #region protected
     static int points;
+    int lives, score;
     float timeScaleReal;
     float timer = 300;
+    bool inGame;
     #endregion
     #endregion
     // Start is called before the first frame update
     void Start()
     {
+        lives = PlayerPrefs.GetInt("Lives");
+        points = PlayerPrefs.GetInt("curScore");
+        Player.enabled = false;
         timeScaleReal = (1 / timeScale) + 1;
+        StartCoroutine(RunOpening());
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime * timeScaleReal;
-        timeDisplay.text = ((int)timer).ToString();
-        scoreDisplay.text = points.ToString();
+        if (inGame)
+        {
+            score = points;
+            timer -= Time.deltaTime * timeScaleReal;
+            timeDisplay.text = ((int)timer).ToString();
+            scoreDisplay.text = points.ToString();
+        }
+        else
+            lifeDisplay.text = " X   " + lives;
     }
     public static void GainPoints(int pointGain)
     {
         points += pointGain;
+    }
+    public void GainCoin()
+    {
+        GainPoints(100);
+    }
+    public void PlayerDied()
+    {
+        lives--;
+        if (lives >= 0)
+        {
+            PlayerPrefs.SetInt("Lives", lives);
+            PlayerPrefs.SetInt("curScore", score);
+        }
+        else
+        {
+            if (score > PlayerPrefs.GetInt("HighScore"))
+                PlayerPrefs.SetInt("HighScore", score);
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
+    public void LifeUp()
+    {
+        lives++;
+    }
+    IEnumerator RunOpening()
+    {
+        yield return new WaitForSeconds(startDelay);
+        Player.enabled = true;
+        loadingScreen.SetActive(false);
+        inGame = true;
+        gameMusic.Play();
     }
 }
 #region Externals

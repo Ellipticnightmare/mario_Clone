@@ -141,6 +141,24 @@ public class marioController : MonoBehaviour
                         break;
                 }
                 break;
+            case "shell":
+                switch (MarioState)
+                {
+                    case marioState.small:
+                        RunDeath();
+                        break;
+                    case marioState.big:
+                        MarioState = marioState.small;
+                        UpdateMarioAppearance();
+                        break;
+                    case marioState.star:
+                        break;
+                    case marioState.flower:
+                        MarioState = marioState.big;
+                        UpdateMarioAppearance();
+                        break;
+                }
+                break;
             case "mushroom": //Increase Mario's health when small
                 if (MarioState == marioState.small)
                     MarioState = marioState.big;

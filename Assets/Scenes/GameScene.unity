@@ -7796,6 +7796,96 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1223756946}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1223756946}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1223756946}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerDied
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GainCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: coinPickup.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LifeUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307992264911401537, guid: 28ac9515e39bda749ab32bb1f639493d,
+        type: 3}
+      propertyPath: lifeUp.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3307992264911401551, guid: 28ac9515e39bda749ab32bb1f639493d,
         type: 3}
       propertyPath: m_Name
