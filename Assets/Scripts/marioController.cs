@@ -72,6 +72,10 @@ public class marioController : MonoBehaviour
             {
                 visualHolder.transform.localScale = new Vector3(hInput, 1, 1); //flip mario left or right depending on movement
                 //Change animation bool to run
+                gameObject.GetComponent<Animator>().SetBool("isMoving", true);
+            }else
+            {
+                gameObject.GetComponent<Animator>().SetBool("isMoving", false);
             }
 
             standCol.enabled = (Input.GetKey(down)) ? false : true; //If crouching, turn off standing collider
@@ -80,6 +84,7 @@ public class marioController : MonoBehaviour
             {
                 jumped = true;
                 //Trigger jump animation
+                gameObject.GetComponent<Animator>().SetTrigger("jump");
             }
         }
     }
@@ -196,6 +201,10 @@ public class marioController : MonoBehaviour
     public void UpdateMarioAppearance()
     {
         //Logic to change Mario's appearance will go here
+        if (MarioState == marioState.small) { gameObject.GetComponent<Animator>().SetTrigger("littleMario"); }
+        if (MarioState == marioState.big) { gameObject.GetComponent<Animator>().SetTrigger("normMario"); }
+        if (MarioState == marioState.flower) { gameObject.GetComponent<Animator>().SetTrigger("fireMario"); }
+
     }
 
     IEnumerator JumpHigher()
